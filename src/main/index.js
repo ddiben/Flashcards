@@ -31,6 +31,8 @@ function createMainWindow() {
     mainWindow = null
   })
 
+  window.setTitle("Flashcards");
+
   window.webContents.on('devtools-opened', () => {
     window.focus()
     setImmediate(() => {

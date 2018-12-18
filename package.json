@@ -1,12 +1,16 @@
 {
-  "name": "electron-webpack-quick-start",
+  "name": "Flashcards",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "electron-webpack dev",
+    "test": "yarn jest",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/renderer/setupTests.js"
   },
   "babel": {
     "presets": [
@@ -17,7 +21,8 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "source-map-support": "^0.5.9"
+    "source-map-support": "^0.5.9",
+    "electron-store": "^2.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.1.6",
@@ -26,7 +31,6 @@
     "babel-jest": "^23.6.0",
     "electron": "3.0.10",
     "electron-builder": "^20.36.2",
-    "electron-store": "^2.0.0",
     "electron-webpack": "^2.6.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
