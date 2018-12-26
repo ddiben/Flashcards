@@ -10,7 +10,10 @@
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/src/renderer/setupTests.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/src/renderer/setupTests.js",
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "babel": {
     "presets": [
@@ -19,10 +22,10 @@
     ]
   },
   "dependencies": {
+    "electron-store": "^2.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "source-map-support": "^0.5.9",
-    "electron-store": "^2.0.0"
+    "source-map-support": "^0.5.9"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.1.6",

@@ -1,0 +1,15 @@
+#decklist {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2vw;
+    padding: 10px; 
+}
+
+.deck {
+    padding: 5vw;
+
+    background-color: #EBEBED;
+
+    font-size: 4.5vw;
+    text-align: center;
+}
