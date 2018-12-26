@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import View from './View';
 import './style.css';
+import EditBtn from './buttons/EditBtn';
+import QuizBtn from './buttons/QuizBtn';
 
 /*
  * The main screen, which displays the various decks.  
@@ -18,9 +20,14 @@ const Home = props => {
 export function wrapDeck(deckTitle, index, clickHandler) {
     return (
         <div className="deck card"
-            onClick={ () => clickHandler.deckEditClick(deckTitle) }
             key={index}>
+            <div className="deck-title">
                 {deckTitle}
+            </div>
+            <div className="deck-buttons">
+                <EditBtn onClick={() => clickHandler.deckEditClick(deckTitle)}/>
+                <QuizBtn onClick={() => clickHandler.deckQuizClick(deckTitle)}/>
+            </div>
         </div>
     );
 };

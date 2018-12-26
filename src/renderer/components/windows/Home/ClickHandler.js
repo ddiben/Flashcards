@@ -8,7 +8,7 @@ class ClickHandler {
         this.manager = manager;
 
         this.deckEditClick = this.deckEditClick.bind(this);
-        this.deckQuizClick = this.deckEditClick.bind(this);
+        this.deckQuizClick = this.deckQuizClick.bind(this);
     }
 
     deckEditClick(deckTitle) {

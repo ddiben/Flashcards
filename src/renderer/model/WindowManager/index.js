@@ -1,4 +1,5 @@
-import { HOME, EDIT, QUIZ, NOT_SET } from '../../utilities/constants';
+import { HOME, EDIT, QUIZ } from '../../utilities/constants';
+import AppState from './AppState';
 
 /*
  * This manages the flow of the app, inflating and deflating 
@@ -11,10 +12,7 @@ class WindowManager {
         // This function swaps the active window in the Frame
         this.swapActiveWindow = null;
 
-        this.appState = {
-            activeWindow: HOME,
-            activeDeck: NOT_SET,
-        }
+        this.appState = new AppState();
 
         this.launchEditWindow = this.launchEditWindow.bind(this);
     }
@@ -31,6 +29,11 @@ class WindowManager {
      */
     launchEditWindow(deckTitle) {
         console.log(`Editing ${deckTitle}`);
+        this.swapActiveWindow(EDIT);
+    }
+
+    launchQuizWindow(deckTitle) {
+        console.log(`Quizzing ${deckTitle}`);
     }
      
 }
