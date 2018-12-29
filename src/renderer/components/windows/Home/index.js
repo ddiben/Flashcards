@@ -3,6 +3,7 @@ import View from './View';
 import './style.css';
 import EditBtn from './buttons/EditBtn';
 import QuizBtn from './buttons/QuizBtn';
+import NewDeckForm from './buttons/NewDeckForm';
 
 /*
  * The main screen, which displays the various decks.  
@@ -11,7 +12,9 @@ const Home = props => {
 
     const deckElementList = wrapDeckList(props.deckList, props.clickHandler);
 
-    return <View deckList={deckElementList}/>;  
+    return <View deckList={deckElementList}     
+                newDeckForm={<NewDeckForm onClick={props.clickHandler.newDeckClick}/>}
+            />;  
 }
 
 /*
@@ -19,14 +22,15 @@ const Home = props => {
  */
 export function wrapDeck(deckTitle, index, clickHandler) {
     return (
-        <div className="deck card"
-            key={index}>
-            <div className="deck-title">
-                {deckTitle}
-            </div>
-            <div className="deck-buttons">
-                <EditBtn onClick={() => clickHandler.deckEditClick(deckTitle)}/>
-                <QuizBtn onClick={() => clickHandler.deckQuizClick(deckTitle)}/>
+        <div className="brick" key={index}>
+            <div className="card deck" key={index}>
+                <div className="deck-title">
+                    {deckTitle}
+                </div>
+                <div className="deck-buttons">
+                    <EditBtn onClick={() => clickHandler.deckEditClick(deckTitle)}/>
+                    <QuizBtn onClick={() => clickHandler.deckQuizClick(deckTitle)}/>
+                </div>
             </div>
         </div>
     );

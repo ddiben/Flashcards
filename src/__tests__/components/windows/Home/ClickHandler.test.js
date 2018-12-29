@@ -1,6 +1,6 @@
 import 'jest';
 import ClickHandler from '../../../../renderer/components/windows/Home/ClickHandler';
-import * as CONST from '../../../../renderer/utilities/constants';
+import * as C from '../../../../renderer/utilities/constants';
 
 describe("Home window's ClickHandler", () => {
 
@@ -13,7 +13,7 @@ describe("Home window's ClickHandler", () => {
         handler.deckEditClick(testDeck);
 
         expect(manager.activeDeck).toEqual(testDeck);
-        expect(manager.activeWindow).toEqual(CONST.EDIT);
+        expect(manager.activeWindow).toEqual(C.EDIT);
     });
 
     it("opens quiz window on deck 'quiz' clicks", () => {
@@ -22,7 +22,8 @@ describe("Home window's ClickHandler", () => {
 
         handler.deckQuizClick(testDeck);
 
-        expect(true).toEqual(false);
+        expect(manager.activeDeck).toEqual(testDeck);
+        expect(manager.activeWindow).toEqual(C.QUIZ);
     });
 
 });
@@ -30,15 +31,20 @@ describe("Home window's ClickHandler", () => {
 class MockWindowManager {
 
     constructor() {
-        this.activeDeck = CONST.NOT_SET;
-        this.activeWindow = CONST.NOT_SET;
+        this.activeDeck = C.NOT_SET;
+        this.activeWindow = C.NOT_SET;
 
         this.launchEditWindow = this.launchEditWindow.bind(this);
     }
 
     launchEditWindow(deckTitle) {
         this.activeDeck = deckTitle;
-        this.activeWindow = CONST.EDIT;
+        this.activeWindow = C.EDIT;
+    }
+
+    launchQuizWindow(deckTitle) {
+        this.activeDeck = deckTitle;
+        this.activeWindow = C.QUIZ;
     }
 
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Frame from '.';
+import Frame from '../../../../renderer/components/structure/Frame';
+import * as C from '../../../../renderer/utilities/constants';
+
 
 describe("Frame", () => {
 
@@ -15,10 +17,10 @@ describe("Frame", () => {
         const mockManager = new MockManager();
         const frame = shallow(<Frame manager={mockManager}/>);
 
-        const testWindow = 'edit';
+        const testWindow = C.EDIT;
         frame.instance().swapActiveWindow(testWindow);
 
-        expect(frame.state().activeWindow).toEqual('edit');
+        expect(frame.state().activeWindow).toEqual(C.EDIT);
     });
 
 });

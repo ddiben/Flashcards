@@ -1,0 +1,31 @@
+
+#new-deck-form {
+
+}
+
+#ndf-title {
+    font-size: 4vw; /*var(--deck-font-size); */
+    background-color: var(--light);
+    border: none;
+    resize: none;
+    height: auto;
+    outline: none;
+    overflow: auto;
+
+    cursor: auto;
+}
+
+.ndf-btns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1vw;
+}
+
+#ndf-create-btn {
+    font-size: var(--deck-font-size);
+    background-color: var(--darker);
+    padding: 0 .85vw 0 .85vw;
+    line-height: 1.05em;
+    border-radius: 50%;
+    cursor: default;
+}

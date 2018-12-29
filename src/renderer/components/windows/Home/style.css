@@ -1,9 +1,6 @@
-#decklist {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 2vw;
-    padding: 10px; 
-}
+/*
+ * Style that is specific to the 'Home' window. 
+ */
 
 .deck {
     display: flex;
@@ -11,14 +8,14 @@
 
     padding: 1vw 1vw 1vw 1vw;
 
-    background-color: #EBEBED;
+    background-color: var(--lightest);
 }
 
 .deck-title {
-    
-
-    font-size: 4.5vw;
+    font-size: var(--deck-font-size);
     text-align: center;
+
+    cursor: default;
 }
 
 .deck-buttons {
@@ -32,10 +29,12 @@
 }
 
 .deck-btn {
-    background: #6F788D;
+    background: var(--darker);
     padding: .5vw;
     border-radius: 50%;
 
     height: 3.3vw;
     width: 3vw;
+
+    cursor: default;
 }

@@ -1,11 +1,16 @@
 import React from 'react';
 
 const View = (props) => {
+
     return (
-        <div id="decklist">
-            {props.deckList}
+        <div id="home">
+            <div id="decklist" className="masonry">
+                {props.newDeckForm}
+                {props.deckList}
+            </div>
         </div>
     );
+
 };
 
 export default View;

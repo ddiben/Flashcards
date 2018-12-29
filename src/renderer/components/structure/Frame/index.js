@@ -10,7 +10,10 @@ class Frame extends Component {
 
     constructor(props) {
         super(props);
-        this.deckList = ["latin", "spanish", "plants", "bees", "your friend's names"];
+        this.deckList = ["latin", "spanish", "plants", 
+        "bees", "your friend's names", "japanese",
+        "a really really really long title, like super long bro", 
+        "german", "bugs"];
 
         this.manager = props.manager;
         this.manager.registerSwapFunction(this.swapActiveWindow.bind(this));

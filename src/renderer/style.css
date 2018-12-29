@@ -2,10 +2,41 @@
  * The base style classes. 
  */
 
+:root {
+    --deck-font-size: 4.5vw;
+
+    --lightest: #EBEBED;
+    --lighter:  #BDC0C7;
+    --neutral: #9197A5;
+    --darker: #6F788D;
+    --darkest: #505C77;
+
+    --font-color: #292f3d;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     width: 100%;
     height: 100%;;
     margin: 0px;
+}
+
+/*
+ * A Masonry style container. 
+ */
+ .masonry {
+    column-count: 4;
+    column-gap: 1vw;
+    padding: 1vw; 
+}
+.brick {
+    break-inside: avoid;
+    box-sizing: border-box;
+    padding-bottom: 1vw;
 }
 
 .card {
@@ -13,7 +44,7 @@ body {
     transition: 0.3s;
     border-radius: .5vw;
 
-    color: #1a202d;
+    color: var(--font-color);
 
     text-align: center;
 }
