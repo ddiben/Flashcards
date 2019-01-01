@@ -10,16 +10,15 @@ class Frame extends Component {
 
     constructor(props) {
         super(props);
-        this.deckList = ["latin", "spanish", "plants", 
-        "bees", "your friend's names", "japanese",
-        "a really really really long title, like super long bro", 
-        "german", "bugs"];
-
-        this.manager = props.manager;
-        this.manager.registerSwapFunction(this.swapActiveWindow.bind(this));
+        // generally this is passed in, but this is hardcoded for testing purposes. 
+        
+        this.res = props.res;
+        
+        this.res.manager.registerSwapFunction(this.swapActiveWindow.bind(this));
 
         this.state = {
             activeWindow: HOME,
+            deckList: props.deckList
         }
     }
 
@@ -35,6 +34,16 @@ class Frame extends Component {
         });
     }
 
+    /*
+     * Update state to reflect the changes made to the decklist. 
+     */
+    deckListChange() {
+        this.setState((state) => {
+            state.deckList = this.res.repo.deckTitles;
+            return state;
+        });
+    }
+
     render() {
         switch (this.state.activeWindow) {
             /*case EDIT: 
@@ -42,8 +51,9 @@ class Frame extends Component {
                 return <Edit deck={this.manager.activeDeck} clickHandler={handler} />  */
 
             default:
-                const handler = new HomeClickHandler(this.manager);
-                return <Home deckList={this.deckList} clickHandler={handler}/>;
+                const handler = new HomeClickHandler(this.res);
+                this.res.repo.registerDataChangeFunction(this.deckListChange.bind(this));
+                return <Home deckList={this.state.deckList} clickHandler={handler} manager={this.res.manager}/>;
         }
     }
 

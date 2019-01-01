@@ -4,8 +4,9 @@
 
 class ClickHandler {
     
-    constructor(manager) {
-        this.manager = manager;
+    constructor(res) {
+        this.manager = res.manager;
+        this.repo = res.repo;
 
         this.deckEditClick = this.deckEditClick.bind(this);
         this.deckQuizClick = this.deckQuizClick.bind(this);
@@ -13,7 +14,7 @@ class ClickHandler {
     }
 
     newDeckClick(newTitle) {
-        console.log(newTitle);
+        return this.repo.createDeck(newTitle);
     }
 
     deckEditClick(deckTitle) {

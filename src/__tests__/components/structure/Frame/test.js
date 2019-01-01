@@ -8,14 +8,16 @@ describe("Frame", () => {
 
     it("registers swap function in manager", () => {
         const mockManager = new MockManager();
-        const frame = shallow(<Frame manager={mockManager}/>).instance();
+        const mockRepo = new MockRepo();
+        const frame = shallow(<Frame res={{manager: mockManager, repo: mockRepo}}/>);
 
         expect(mockManager.swapFunction).toEqual(frame.state.swapActiveWindow);
     });
 
     it("swaps active window", () => {
         const mockManager = new MockManager();
-        const frame = shallow(<Frame manager={mockManager}/>);
+        const mockRepo = new MockRepo();
+        const frame = shallow(<Frame res={{manager: mockManager, repo: mockRepo}}/>);
 
         const testWindow = C.EDIT;
         frame.instance().swapActiveWindow(testWindow);
@@ -24,6 +26,12 @@ describe("Frame", () => {
     });
 
 });
+
+class MockRepo {
+    registerDataChangeFunction() {
+        // don't do nothing
+    }
+}
 
 class MockManager {
     constructor() {

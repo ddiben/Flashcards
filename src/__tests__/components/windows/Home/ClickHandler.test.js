@@ -8,7 +8,8 @@ describe("Home window's ClickHandler", () => {
 
     it("opens edit window on deck 'edit' clicks", () => {
         const manager = new MockWindowManager();
-        const handler = new ClickHandler(manager);
+        const res = {manager: manager}
+        const handler = new ClickHandler(res);
 
         handler.deckEditClick(testDeck);
 
@@ -18,7 +19,8 @@ describe("Home window's ClickHandler", () => {
 
     it("opens quiz window on deck 'quiz' clicks", () => {
         const manager = new MockWindowManager();
-        const handler = new ClickHandler(manager);
+        const res = {manager: manager}
+        const handler = new ClickHandler(res);
 
         handler.deckQuizClick(testDeck);
 

@@ -8,13 +8,13 @@ import NewDeckForm from './buttons/NewDeckForm';
 /*
  * The main screen, which displays the various decks.  
  */
-const Home = props => {
+const Home = (props) => {
 
     const deckElementList = wrapDeckList(props.deckList, props.clickHandler);
 
     return <View deckList={deckElementList}     
-                newDeckForm={<NewDeckForm onClick={props.clickHandler.newDeckClick}/>}
-            />;  
+                newDeckForm={<NewDeckForm newDeckClick={props.clickHandler.newDeckClick}/>}
+                manager={props.manager} currentDeck={"Leitner Flash!"}/>;  
 }
 
 /*

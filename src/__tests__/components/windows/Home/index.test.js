@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Home, { wrapDeck } from '../../../../renderer/components/windows/Home/index';
 import * as C from '../../../../renderer/utilities/constants';
 
@@ -8,7 +8,8 @@ describe("Home window", () => {
     const deckList = ["tomatoes", "spanish", "plants"];
 
     it("renders the deck list", () => {
-        const home = mount(<Home deckList={deckList}/>);
+        const handler = new MockClickHandler();
+        const home = mount(<Home deckList={deckList} clickHandler={handler} manager={{}}/>);
 
         const result = home.find('#decklist');
 
@@ -16,17 +17,19 @@ describe("Home window", () => {
     });
 
     it("displays deck elements", () => {
-        const home = mount(<Home deckList={deckList}/>);
+        const handler = new MockClickHandler();
+        const home = mount(<Home deckList={deckList} clickHandler={handler} manager={{}}/>);
 
         const renderedDeckList = home.findWhere((el) => el.hasClass("deck"));
 
-        expect(renderedDeckList.length).toEqual(3);
+        // 3 + 1 (for new-deck-form)
+        expect(renderedDeckList.length).toEqual(4);
     });
 
     it("listens for 'edit' clicks, and passes them back to the click handler", () => {
         const handler = new MockClickHandler();
 
-        const home = mount(<Home deckList={deckList} clickHandler={handler}/>);
+        const home = mount(<Home deckList={deckList} clickHandler={handler} manager={{}}/>);
 
         const deck = findDeck(home, deckList[1]);
 
@@ -47,7 +50,7 @@ describe("Home window", () => {
 
     it("listens for 'quiz' clicks", () => {
         const handler = new MockClickHandler();
-        const home = mount(<Home deckList={deckList} clickHandler={handler}/>);
+        const home = mount(<Home deckList={deckList} clickHandler={handler} manager={{}}/>);
 
         const deck = findDeck(home, deckList[2]);
 
@@ -71,6 +74,11 @@ class MockClickHandler {
         this.activeWindow = C.NOT_SET;
 
         this.deckEditClick = this.deckEditClick.bind(this);
+        this.newDeckClick = this.newDeckClick.bind(this);
+    }
+
+    newDeckClick(deckTitle) {
+
     }
 
     deckEditClick(deckTitle) {

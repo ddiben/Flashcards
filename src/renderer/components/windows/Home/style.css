@@ -9,6 +9,10 @@
     padding: 1vw 1vw 1vw 1vw;
 
     background-color: var(--lightest);
+
+    border-color: var(--font-color);
+    border-style: solid;
+    border-width: 1vw;
 }
 
 .deck-title {

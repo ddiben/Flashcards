@@ -35,6 +35,10 @@ class WindowManager {
     launchQuizWindow(deckTitle) {
         console.log(`Quizzing ${deckTitle}`);
     }
+
+    launchHomeWindow() {
+        console.log("launching home window");
+    }
      
 }
 

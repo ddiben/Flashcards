@@ -1,0 +1,34 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 4vw;
+
+    height: 4vw;
+    width: auto;
+
+    background-color: var(--darkest);
+    color: var(--lightest);
+
+    border-style: solid;
+    border-width: 1vw;
+    border-color: var(--font-color);
+    border-radius: .5vw;
+    padding: 1vw;
+}
+
+.nav-current-deck {
+    border-radius: 50%;
+    cursor: default;
+}
+
+.nav-home-btn {
+    border-radius: .5vw;
+    background-color: var(--lightest);
+    padding: .25vw;
+    color: var(--font-color);
+
+    cursor: default;
+}
