@@ -27,7 +27,7 @@
 .nav-home-btn {
     border-radius: .5vw;
     background-color: var(--lightest);
-    padding: .25vw;
+    padding: .4vw;
     color: var(--font-color);
 
     cursor: default;

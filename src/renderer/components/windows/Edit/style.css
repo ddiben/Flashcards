@@ -1,0 +1,8 @@
+.flashcard {
+    background-color: var(--lightest);
+    padding: 1vw;
+}
+
+.flashcard-prompt {
+    font-size: 4vw;
+}

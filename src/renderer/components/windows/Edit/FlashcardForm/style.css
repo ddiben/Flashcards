@@ -1,0 +1,104 @@
+.modal-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position:fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.fc-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    width: 100%;
+    padding: 1vw;
+
+    font-size: 3vw;
+}
+
+input, textarea {
+    box-sizing: border-box;
+    font-size: 2.5vw;
+    border: none;
+    border-bottom: 2px solid var(--darkest);
+    background-color: var(--lightest);
+    outline: none;
+    padding: .5vw;
+    margin-left: 1vw;
+    margin-right: 2vw;
+}
+
+textarea {
+    width: 97%;
+    resize: none;
+}
+
+label {
+    margin-bottom: 2vw;
+}
+
+.fc-prompt-input {
+    width: 67vw;
+    box-sizing: border-box;
+}
+
+.fc-definition-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#fc-new-definition-btn {
+    background: var(--neutral);
+    padding: 1vw;
+    border-radius: 50%;
+    height: auto;
+    width: auto;
+}
+
+.fc-definitions {
+    margin-left: 1vw;
+}
+
+.fc-definition-input {
+    width: 74vw;
+}
+
+.fc-usage-input {
+    width: 69vw;
+}
+
+.fc-dtq-input {
+    width: 72vw;
+}
+
+.fc-form-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#fc-form-cancel-btn {
+    cursor: default;
+    background: var(--neutral);
+    padding: 1vw;
+    border-radius: 50%;
+}
+
+#fc-form-commit-btn {
+    cursor: default; 
+    background: var(--neutral);
+    padding: 1vw;
+    border-radius: 50%;
+}

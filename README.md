@@ -17,3 +17,12 @@ Design Questions:
         - I will only load it as I need it. 
 
     -- Quizzes are calculated on clicks or on initial load? 
+
+
+Extra Features: 
+
+    -- if the 'usage' section automatically italicized, that would be cool. 
+
+
+WHERE I STOPPED (1/2/19) : 
+    Just finished styling the Edit window.  

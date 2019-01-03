@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import Home from '../../windows/Home';
+import Edit from '../../windows/Edit';
 import { default as HomeClickHandler } from '../../windows/Home/ClickHandler';
 import { HOME, EDIT, QUIZ } from '../../../utilities/constants';
 
@@ -17,7 +18,7 @@ class Frame extends Component {
         this.res.manager.registerSwapFunction(this.swapActiveWindow.bind(this));
 
         this.state = {
-            activeWindow: HOME,
+            activeWindow: EDIT, //HOME,
             deckList: props.deckList
         }
     }
@@ -46,9 +47,10 @@ class Frame extends Component {
 
     render() {
         switch (this.state.activeWindow) {
-            /*case EDIT: 
+            case EDIT: 
                 //const handler = new EditClickHandler(this.manager);
-                return <Edit deck={this.manager.activeDeck} clickHandler={handler} />  */
+                const flashcardList=[{prompt: "cheap seats"}, {prompt: "tomatoes"}];
+                return <Edit flashcardList={flashcardList} manager={this.res.manager}/>;
 
             default:
                 const handler = new HomeClickHandler(this.res);
